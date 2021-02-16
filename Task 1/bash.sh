@@ -1,0 +1,1 @@
+cat /var/log/auth.log | grep sudo | sed 's/\|/ /'|awk '{print $6 $7, $14}' | tr -d COMMAND=
