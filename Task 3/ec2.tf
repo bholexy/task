@@ -16,13 +16,9 @@ resource "aws_instance" "nginx" {
                    timeout = "1m"
                    agent = "false"
       }
-    inline = [
-      "sudo sed -i -e '$a\\' -e '${aws_instance.server1.private_ip} server1' /etc/hosts",
-      "sudo sed -i -e '$a\\' -e '${aws_instance.server2.private_ip} server2' /etc/hosts"
-    ]
   }
 
-  user_data = file("install2.sh")
+  user_data = file("install.sh")
   tags = {
     env = "task"
   }

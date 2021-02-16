@@ -14,8 +14,3 @@ terraform {
   }
 }
 
-### Keypair ###
-resource "aws_key_pair" "default" {
-  key_name = "ec2-elb-key"
-  public_key = file("${var.key_path}")
-}
